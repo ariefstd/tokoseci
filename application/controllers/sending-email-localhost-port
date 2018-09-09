@@ -1,0 +1,42 @@
+public function Send_Mail() {
+        
+            
+            // Storing submitted values
+            //$sender_email = $this->input->post('user_email');
+            //$user_password = $this->input->post('user_password');
+            $receiver_email = $this->input->post('to_email');
+            $username = $this->input->post('name');
+            //$subject = $this->input->post('subject');
+            $message = $this->input->post('message');
+            
+            // Configure email library
+            $config['protocol'] = 'smtp';
+            $config['smtp_host'] = 'localhost';
+            $config['smtp_port'] = 25;
+            $config['smtp_user'] = 'info@jewelofequator.com';
+            $config['smtp_pass'] = 'info1939';
+
+            // Load email library and passing configured values to email library 
+            $this->load->library('email', $config);
+            $this->email->set_newline("\r\n");
+            
+            // Sender email address
+            $this->email->from('info@jewelofequator.com', 'Jewel of Equator');
+            // Receiver email address
+            $this->email->to($receiver_email);
+            // Subject of email
+            $this->email->subject('Contact Form');
+            // Message in email
+            $this->email->message($message);
+
+            if ($this->email->send()) {
+                $data['message_display'] = 'Email Successfully Send !';
+            } else {
+                $data['message_display'] = '<p class="error_msg">Invalid Gmail Account or Password !</p>';
+            }
+            //$this->load->view('contacto', $data);
+            redirect('index');
+            
+            //redirect(site_url());
+        
+    }

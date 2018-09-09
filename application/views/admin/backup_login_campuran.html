@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="description" content="Macaroon -Creative Patisserie HTML Template">
+    <meta name="author" content="CreateIT">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <title>Diana - Creative Shop Template</title>
+    <link rel="stylesheet" href="<?php echo base_url() ?>fonts/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>css/style.css">
+    <link rel="stylesheet" href="<?php echo base_url() ?>css/select2.css">
+
+   <!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">-->
+
+
+    <!--[if lt IE 9]>
+    <script src="bootstrap/js/html5shiv.min.js"></script>
+    <script src="bootstrap/js/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="<?php echo base_url() ?>js/modernizr.custom.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+  <div class="row">
+
+  <div class="col-md-12">
+    <?php $this->load->view('includes/header'); ?>
+  </div>
+    <div class="top" style="float:left; width:100%; margin: auto; height: 2px;background-color: #000000"></div>  
+        
+  </div>
+</div>  
+    <div class="container">
+      <div class="col-sm-12 col-md-12" style="padding: 0 20px">
+            
+      </div>
+    </div>
+      
+<div class="container">
+  <div class="row">
+  <div class="col-md-12 col-sm-12" style="padding:0px">
+
+
+    <div class="col-md-3 col-sm-3" style="padding:0px; height: auto">
+      <div class="col-md-12 col-sm-12" style="height: auto margin: 5px 0">    
+
+    <div class="container login" align="center">
+
+  <div class="row">
+    <h3 class="form-signin-heading">Please Login</h3>
+  </div>
+
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h4 class="ct-headerBox ct-u-borderBottom ct-u-paddingBottom20 text-left ct-u-paddingTop50">Already a Member? <span class="ct-u-colorGrey">Login</span></h4>
+                        <div class="ct-u-size16 ct-fw-700 ct-u-paddingBottom20 ct-u-paddingTop30">It's Easy...</div>
+                        <form class="form-horizontal form-signin ct-u-paddingBottom20" method="post" action="<?php echo base_url(); ?>admin/login/validate_credentials/">
+                            <div class="form-group">
+                                <label for="username" class="col-sm-2 control-label">Email: </label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="email_address" placeholder="Email" class="form-control" id="username" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="col-sm-2 control-label">Password:</label>
+                                <div class="col-sm-10">
+                                    <input type="password" name="password" placeholder="Password" class="form-control" id="password">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <div class="pull-left ct-rememberPassword">
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="rememberPassword">
+                                            <label for="rememberPassword">
+                                                <span class="ct-rememberPassword-text ct-u-size14 ct-u-colorGrey">Remember my password</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="pull-right ct-forgotPassword">
+                                        <a href="lost-password.html" class="ct-forgotPassword-text">Lost your Password?</a>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10"> 
+                                <?php
+                                    if(isset($message_error) && $message_error){
+                                        echo '<div class="alert alert-error">';
+                                          echo '<a class="close" data-dismiss="alert">×</a>';
+                                          echo '<strong>Oh snap!</strong> Change a few things up and try submitting again.';
+                                        echo '</div>';             
+                                    }
+                                ?>                                   
+                                    <input type="submit" name="submit" value="Login" class="btn btn-large btn-default" />
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                    <div class="col-md-4">
+                        <h4 class="ct-headerBox ct-u-borderBottom ct-u-paddingBottom20 text-left ct-u-paddingTop50">Follow Us</h4>
+                        <div class="ct-u-paddingBottom20 ct-u-paddingTop30">
+                            <ul class="ct-socials ct-socials--small ct-socials--black list-inline list-unstyled">
+                                  <li><a href="https://www.facebook.com/createITpl"><i class="fa fa-facebook fa-fw"></i></a></li>
+                                <li><a href="https://twitter.com/createitpl"><i class="fa fa-twitter fa-fw"></i></a></li>
+                                <li><a href="#"><i class="fa fa-rss fa-fw"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="tweets_display">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+      <?php 
+      $attributes = array('class' => 'form-signin');
+      echo form_open('admin/login/validate_credentials', $attributes);      
+      ?>
+      
+      <input type="text" name="email_address" placeholder="Email" class="text-box" />
+      <?php
+      //echo form_input('email_address', '', 'placeholder="Email"');
+      echo '<br>';
+      ?>
+      <input type="password" name="password" placeholder="Password" class="text-box" />
+      <?php
+      //echo form_password('password', '', 'placeholder="Password"');
+      echo '<br>';
+      echo '<br>';
+      if(isset($message_error) && $message_error){
+          echo '<div class="alert alert-error">';
+            echo '<a class="close" data-dismiss="alert">×</a>';
+            echo '<strong>Oh snap!</strong> Change a few things up and try submitting again.';
+          echo '</div>';             
+      }
+      //echo "<br />";
+    ?> 
+    <?php
+    echo form_submit('submit', 'Login', 'class="btn btn-large btn-primary"');
+    ?>
+    <!--
+    <a href="http://airkali.com/fb_login" onClick="centeredPopup(this.href,'myWindow','550','475','no');return false">Login from facebook</a>
+  -->
+    <?php
+      //echo "<br />";
+      echo "<br />";
+      echo "<br />";
+      echo anchor('admin/signup', 'Signup!');
+      echo form_close();
+      echo '<br>';
+      ?>   
+              
+      </div>
+
+
+      <div class="col-md-12 col-sm-12" style="height: auto; margin: 5px 0">
+        
+      </div>
+    </div>
+    
+
+    </div> 
+  
+  </div>  
+</div>
+</div>
+
+<div class="container">
+<div class="row">
+<div class="bottom" style="float:left; width:100%; margin: auto; height: 25px;background-color: #000000"></div>
+</div>
+</div>
+
+    <script src="<?php echo base_url() ?>js/jquery.min.js"></script>
+
+    <script src="<?php echo base_url() ?>bootstrap/js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url() ?>js/jquery.placeholder.min.js"></script>
+    <script src="<?php echo base_url() ?>js/jquery.easing.1.3.js"></script>
+    <script src="<?php echo base_url() ?>js/device.min.js"></script>
+    <script src="<?php echo base_url() ?>js/jquery.browser.min.js"></script>
+    <script src="<?php echo base_url() ?>js/snap.min.js"></script>
+    <script src="<?php echo base_url() ?>js/jquery.appear.js"></script>
+
+    <script src="<?php echo base_url() ?>plugins/headroom/headroom.js"></script>
+    <script src="<?php echo base_url() ?>plugins/headroom/jQuery.headroom.js"></script>
+    <script src="<?php echo base_url() ?>plugins/headroom/init.js"></script>
+
+    <script src="<?php echo base_url() ?>form/js/contact-form.js"></script>
+
+    <script src="<?php echo base_url() ?>js/select2/select2.min.js"></script>
+    <script src="<?php echo base_url() ?>js/stacktable/stacktable.js"></script>
+
+    <script src="<?php echo base_url() ?>js/elevate-zoom/jquery.elevatezoom.js"></script>
+    <script src="<?php echo base_url() ?>js/elevate-zoom/init.js"></script>
+    <script src="<?php echo base_url() ?>js/main.js"></script>
+
+    <script src="<?php echo base_url() ?>twitter/js/jquery.tweet.js"></script>
+
+</body>
+</html>
+<?php
+
+?>
